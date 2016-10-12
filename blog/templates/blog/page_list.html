@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>My Site</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+        {% for page in pages %}
+        <div>
+            <p>published: {{ page.published_date }} </p>
+            <h2><a href="">{{ page.title }} </a></h2>
+            <p>{{ page.text|linebreaksbr }} </p>
+        </div>
+        {% endfor %}
+    </body>
+</html>
