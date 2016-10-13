@@ -7,7 +7,10 @@
     </head>
     <body>
     <div class="page-header">
-        <h1><a href="">Django Girls Blog</a></h1>
+        {% if user.is_authenticated %}
+        <a href="{% url 'page_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+        <h1><a href="{% url 'page_list' %}">My Blog</a></h1>
     </div>   
     <div class="content container">
         <div class="row">
