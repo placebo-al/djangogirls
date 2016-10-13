@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+	{% for page in pages %}
+	<div class="post">
+		<p class="date">created: {{ page.created_date|date:'d-m-Y' }}</p>
+		<h1><a href="{% url 'page_detail' pk=page.pk %}">{{ page.title }}</a></h1>
+		<p>{{ page.text|truncatechars:200 }} </p>
+	</div>
+	{% endfor %}
+{% endblock %}
