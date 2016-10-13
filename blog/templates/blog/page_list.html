@@ -1,17 +1,27 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>My Site</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href={% static "css/blog.css" %}>
     </head>
-    <body>
-        <div>
+    
+        <div class="page-header">
             <h1><a href="">Django Girls Blog</a></h1>
         </div>
-        {% for page in pages %}
-        <div>
-            <p>published: {{ page.published_date }} </p>
-            <h2><a href="">{{ page.title }} </a></h2>
-            <p>{{ page.text|linebreaksbr }} </p>
+    <body>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for page in pages %}
+                <div class="post">
+                    <p>published: {{ page.published_date }} </p>
+                    <h2><a href="">{{ page.title }} </a></h2>
+                    <p>{{ page.text|linebreaksbr }} </p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
+    </div>        
     </body>
 </html>
